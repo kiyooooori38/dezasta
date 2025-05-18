@@ -1,0 +1,48 @@
+@charset "UTF-8";
+.menu {
+  list-style: none;
+  padding: 0;
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  gap: 50px;
+  justify-content: space-between;
+  align-items: center;
+  /* disply flexは高さの指定に一番はじめはストレッチ値が効いているので、指定しないと縦伸びしちゃう。 */
+}
+
+/* .container {
+  display: flex;
+} */
+
+.container {
+  display: flex;
+  max-width: 1000px;
+  /* コンテンツ幅はMAXをつける。widthだと画面幅が設定より小さくなってもずっとその通り表示されてしまう。maxをつけることによって調整されるようになる */
+  justify-content: space-between;
+  margin: 50px auto;
+  flex-wrap: wrap;
+  /* 100%超えたら折り返すよ */
+  gap: 30px;
+}
+.box {
+  width: 30%; /* 横の子要素は％がよいかも */
+  /* Xpxで指定すると、画面が1000pxより小さくなった時余白が潰れてボックスもつぶれてしまう。けど、％にすれば余白を */
+  height: 300px;
+
+  background-color: orange;
+  border: 1px solid black;
+}
+
+@media screen and (max-width: 767px) {
+  .container {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .box {
+    width: 100%;
+  }
+}
+/* メディアクリアと検索 */
+/* 767px以下に画面幅がなったときに変化しますよ */
