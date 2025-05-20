@@ -1,0 +1,102 @@
+@charset "UTF-8";
+
+/* 1 */
+.container_01 {
+  display: flex;
+  max-width: 960px;
+  justify-content: space-between;
+}
+.box_01 {
+  width: 31.25%;
+  height: 300px;
+  border: 1px solid black;
+  background-color: blue;
+  margin-bottom: 10px;
+}
+/* 2 */
+.container_02 {
+  display: flex;
+  max-width: 960px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.box_02 {
+  width: 31.25%;
+  height: 300px;
+  background-color: red;
+  border: 1px solid black;
+}
+
+/* 3 */
+/* タイトルとメニューを横並び */
+.header {
+  display: flex;
+  max-width: 960px;
+  padding: 50px 0;
+  justify-content: space-between;
+}
+/* メニュー内を横並び */
+.header_menu {
+  display: flex;
+  align-items: center;
+}
+.header_menu li {
+  padding: 5px 30px;
+}
+
+.header_menu li:not(:last-child) {
+  border-right: 1px solid #444;
+}
+
+/* レスポンシブ対応 */
+/* Q.画面縮小した際、幅を指定しなくても途切れることなくheader_menuが表示されるのですか？メディアクエリ外で960pxをmax-width指定しているからですか？ */
+@media screen and (max-width: 767px) {
+  .header {
+    flex-direction: column;
+  }
+
+  .header h1 {
+    padding-left: 10px;
+  }
+
+  .header_menu {
+    padding: 0 10px;
+    flex-direction: column;
+    align-items: stretch; /*flex-startのままliのwidthを消すと下線がみじかかかったけどstretchにしたらwidthをなくしても大丈夫だった*/
+  }
+
+  .header_menu li {
+    border-bottom: 1px solid #444;
+    padding: 10px 0;
+  }
+  .header_menu li:not(:last-child) {
+    border-right: none;
+  }
+}
+
+/* レスポンシブ対応
+うまくいかなかったコード
+→flex-start使用時、下線が項目の幅にしかひかれていなかった。そのため、liタグをブロック要素にするも、親要素の960px幅が効いてしまって左余白を調整できなかった
+
+@media screen and (max-width: 767px) {
+  .header {
+    flex-direction: column;
+  }
+
+  .header_menu {
+    width: 100%;
+    padding: 0 10px;
+    flex-direction: column;
+    align-items: flex-start; 
+  } 
+
+  .header_menu li {
+    display: block; 
+    width: 100%; 
+  }
+  .header_menu li:not(:last-child) {
+    border-right: none;
+  } 
+  */
