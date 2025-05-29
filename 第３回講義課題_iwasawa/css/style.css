@@ -1,0 +1,66 @@
+@charset "UTF-8";
+
+h1 {
+  max-width: 100%;
+  text-align: center; /*文字を中央寄せにするにはこれ.基本ブロック要素使用する*/
+  padding: 50px 0;
+  color: green;
+  font-size: 50px;
+}
+
+.service {
+  max-width: 960px;
+  background-color: #eeeeee;
+  margin: 0 auto;
+  height: 500px;
+}
+
+.contain {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin: 0 50px;
+  /* max-width: 100%; */
+}
+.list {
+  background-color: white;
+  width: calc((100%-140px) / 3);
+  /* box-sizing: border-box; */
+}
+
+.list img {
+  max-width: 100%;
+  height: 200px; /*heightに２００pxを設定した際、なぜか画像の幅がlist幅より小さくなってしまった・・・なぜ？？画像の比率の関係？？？
+  そのためautoにすると、幅は揃ったけど高さが異なってしまった→object-fitを指定すると一見できている感じ*/
+  object-fit: cover;
+  box-sizing: border-box;
+} /*メモ：listクラスで３つの画像コンテンツの幅を等分したつもりが、真ん中の画像だけ小さかった。
+　box-sizingを設定し、解消。幅や高さを設定するクラスに指定する
+ */
+
+.sub_title {
+  color: green;
+  margin: 5px 5px;
+  padding: 0 5px;
+  border-left: 6px solid green;
+}
+
+.list p {
+  padding: 0 5px;
+  line-height: 1.5rem;
+}
+
+@media screen and (max-width: 400px) {
+  .service {
+    height: auto;
+  }
+  .contain {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/* 質問 
+①画像は、object-fitを使用して画像の見え方を調整しました。ワークの意図にあってますでしょうか？
+
+*/

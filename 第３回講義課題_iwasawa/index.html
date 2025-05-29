@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+
+    <title>第３回講義課題</title>
+  </head>
+
+  <body>
+    <section class="service">
+      <h1>サービス</h1>
+      <main class="contain">
+        <div class="list">
+          <img src="./images/main_1.jpg" alt="サービス1" />
+          <h2 class="sub_title">サービス1</h2>
+          <p>サービス1サービス1サービス1サービス1サービス1サービス1サービス1</p>
+        </div>
+        <div class="list">
+          <img src="./images/main_2.png" alt="サービス2" />
+          <h2 class="sub_title">サービス2</h2>
+          <p>サービス2サービス2サービス2サービス2サービス2サービス2サービス2</p>
+        </div>
+        <div class="list">
+          <img src="./images/main_3.png" alt="サービス3" />
+          <h2 class="sub_title">サービス3</h2>
+          <p>サービス3サービス3サービス3サービス3サービス3サービス3サービス3</p>
+        </div>
+      </main>
+    </section>
+
+    <script>
+      //work1-1
+      let result = 0;
+      //console.log(result);
+
+      //work1-2
+
+      // for (初期値; 条件式; 増減値) {
+      // 条件がっ成立している限り繰り返す処理
+      // }
+
+      for (let i = 1; i <= 10; i++) {
+        result = result + i;
+        // console.log(result);
+      }
+      console.log(result);
+
+      //work1-3
+      if (result >= 20) {
+        console.log("20以上");
+      } else {
+        console.log("20未満");
+      }
+      //メモ：初回resultは0。0+1=1 2回目：1+2(=i)=3 ３回目:3+3=6・・・
+
+      //2パターン目
+      //   let array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+      //   for (let i = 0; i < array.length; i++) {
+      //     result = result + array[i];
+      //   }
+      //   console.log(result);
+      //メモ：array.length=10。
+    </script>
+  </body>
+</html>
