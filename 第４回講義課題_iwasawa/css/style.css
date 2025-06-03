@@ -1,0 +1,45 @@
+@charset "UTF-8";
+body {
+  background-color: lightgray;
+}
+
+.header_slider img {
+  width: 100%;
+  /* 画像が１９００px。画面幅がそれ以上になったときでも画面幅いっぱいに広がるように１００％設定にしとく */
+}
+header {
+  position: relative;
+}
+.header_wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 7% 0 3%;
+  position: absolute;
+  /*動かしたい要素にこれを設定する。absoluteだけだと、どこにのせよっかなーと浮いている状態のため高さに含まれない。親要素にリレイティブを設定すると、設定された範囲で移動できる。設定しないと画面幅をもとにして移動する*/
+  /*absolute設定すると横幅が打ち消される時があるため、その時は再設定してあげる*/
+  width: 100%;
+  /*このままだとパディング含んでの100%になってしまうそのためボーダーボックスの設定が必要*/
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+}
+
+.header_logo {
+  width: 227px;
+}
+
+.pc_nav ul {
+  display: flex;
+  gap: 54px;
+}
+
+.pc_nav li {
+  width: 105px;
+  text-align: center;
+  color: #fff;
+  font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "メイリオ",
+    "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+}
