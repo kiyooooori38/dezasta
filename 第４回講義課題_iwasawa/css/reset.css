@@ -9,6 +9,7 @@ body,
 h1,
 h2,
 h3,
+h4,
 p,
 dl,
 dt,
@@ -24,7 +25,10 @@ li {
     "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif; */
   font-family: "游明朝", YuMincho, "Hiragino Mincho ProN W3",
     "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝",
-    "ＭＳ 明朝", serif;
+    "ＭＳ 明朝", serif; /*質問：サイトからコピーしましたが黄色い枠が表示されています。半角に直すひつようがありますか？*/
+  font-weight: normal;
+  font-feature-settings: "palt";
+  letter-spacing: 0.1em;
 }
 
 a {
@@ -49,4 +53,9 @@ img {
 a:hover {
   /* color: red; */
   opacity: 0.5; /*透過*/
+}
+
+dt,
+dd {
+  font-size: 23px;
 }
