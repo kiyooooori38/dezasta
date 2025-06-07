@@ -1,0 +1,207 @@
+@charset "UTF-8";
+body {
+  background-color: #e8d9bf;
+}
+
+/* ヘッダー */
+.header_slider img {
+  width: 100%;
+  /* メモ：画像が１９２０px。画面幅がそれ以上になったときでも画面幅いっぱいに広がるように１００％設定にしとく */
+}
+header {
+  position: relative;
+}
+.header_wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 7% 0 3%;
+  position: absolute;
+  /*メモ：動かしたい要素にこれを設定する。absoluteだけだと、どこにのせよっかなーと浮いている状態のため高さに含まれない。親要素にリレイティブを設定すると、設定された範囲で移動できる。設定しないと画面幅をもとにして移動する*/
+  /*メモ：absolute設定すると横幅が打ち消される時があるため、その時は再設定してあげる*/
+  width: 100%;
+  /*メモ：このままだとパディング含んでの100%になってしまうそのためボーダーボックスの設定が必要*/
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+}
+
+.header_logo {
+  width: 227px;
+}
+
+.pc_nav ul {
+  display: flex;
+  gap: 54px;
+}
+
+.pc_nav li {
+  width: 105px;
+  text-align: center;
+  color: #fff;
+  font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "メイリオ",
+    "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 0;
+}
+
+/* メイン */
+.main_wrap {
+  max-width: 1000px; /*メモ：画面幅１９２０pxー（４６０px*2）*/
+  margin: 0 auto;
+  text-align: center;
+}
+
+.sub_title {
+  margin-top: 104px;
+}
+
+.title {
+  /* font-size: 82px; */
+  font-size: clamp(
+    38px,
+    8.2vw,
+    82px
+  ); /*メモ：画面幅に合わせて縮小されるようにしてみる*/
+  /* font-weight: normal; */
+  line-height: 1.17;
+
+  margin-top: 47px;
+}
+
+.title_text {
+  margin-top: 20px;
+  font-size: 23px;
+  line-height: 1.65;
+}
+
+/* ABOUT US */
+.about_flex {
+  margin-top: 93px;
+  display: flex;
+  align-items: center;
+  text-align: left;
+}
+
+.about_flex div {
+  width: 50%;
+}
+
+.about_image01 {
+  width: 100%;
+  border-radius: 0 0 82px 0;
+}
+
+.about_image02 {
+  width: 272px;
+}
+.about_content {
+  width: 50%;
+  padding-left: 79px;
+  box-sizing: border-box;
+}
+h3 {
+  margin-top: 47px;
+  font-size: 44px;
+  line-height: 1.39;
+}
+
+.about_text {
+  margin-top: 24px;
+  font-size: 16px;
+  line-height: 1.62;
+}
+
+/*MENU*/
+.main_wrap {
+  margin-top: 96px;
+}
+.menu_image01 {
+  width: 151px;
+}
+.menu_content {
+  margin-top: 39px;
+  display: flex;
+  gap: 48px;
+  text-align: left;
+}
+
+.menu_content li {
+  position: relative;
+  width: calc(100% / 3);
+}
+.menu_images {
+  width: 100%;
+  border-radius: 0 42px 0 0;
+}
+
+h4 {
+  font-size: 38px;
+  color: #d30202;
+  position: absolute;
+  top: 188px;
+  left: 11px;
+}
+
+.menu_text {
+  margin-top: 39px;
+  /*質問：aiデータの余白は9pxですが、h4にpositionを設定したらここの幅まで狭まってしまいました。
+  どうきっちり調整したらいいかわからず、目分量で余白を設定してしまっていますが、
+  正しく9px余白を設けるにはどうしたらいいでしょうか・・・*/
+  font-size: 17px;
+  line-height: 1.47;
+}
+
+/* ギャラリー */
+.gallery_image01 {
+  width: 245px;
+}
+
+.gallery_wrap {
+  display: flex;
+  margin-top: 17px;
+}
+
+/*イベント*/
+.event_image01 {
+  width: 173px;
+}
+
+dl {
+  background-color: white;
+  border: 3.7px solid #4f260b;
+  margin-top: 30px;
+  height: 200px;
+}
+
+.event_list {
+  display: flex;
+  justify-content: flex-start;
+  gap: 55px;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  /* 中央寄せにしようとwidthやmarginをこのように設定すると、端が揃わず、この設定を外すと真ん中に寄せられず苦戦しています */
+}
+
+/*アクセス*/
+iframe {
+  margin-top: 37px;
+  display: block;
+  width: 100%;
+  height: 471px;
+  /*メモ：iframeタグは縦幅が設定されていないので、デザイン通りし指定する。display:block指定しないと下に隙間が開いちゃうので必ず必要*/
+}
+.access_image01 {
+  width: 214px;
+}
+
+/* フッター */
+/* ページトップボタン */
+.pagetop {
+  position: fixed;
+  right: 40px;
+  bottom: 40px;
+  width: 125px;
+}
