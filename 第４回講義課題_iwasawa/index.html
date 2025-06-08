@@ -38,7 +38,7 @@
      <!-- メイン -->
     <main>
     <div class="main_wrap">
-      <!-- 質問：sectionでなくdivであっていますか？ -->
+
       <p class="sub_title">Have a happy day From a cup of coffee.</p>
       <p class="title">
         ハッピーに溢れる1日を<br />
@@ -70,19 +70,29 @@
       <img class="menu_image01" src="./images/menu@2x.png" alt="MENU">
       </div>
       <ul class="menu_content">
-        <li><img class="menu_images" src="./images/pc_menu_drink-100.jpg" alt="飲み物の画像">
-          <h4>Drinks</h4>
-          <!-- 質問：h4タグは正しいでしょうか？他の箇所も、ベストなダグでなければコメントいただけると嬉しいです！ -->
-          <p class="menu_text">ドリンクメニューの概要を100文字程度で紹介します。素材やこだわりなどをアピールしていきます。</p>
-        </li>
+        <li>
+          <div class="menu_wrap">
+              <img class="menu_images" src="./images/pc_menu_drink-100.jpg" alt="飲み物の画像">
+              <h4>Drinks</h4>
+          </div>
+              <!-- 質問：h4タグは正しいでしょうか？他の箇所も、ベストなダグでなければコメントいただけると嬉しいです！ -->
+              <p class="menu_text">ドリンクメニューの概要を100文字程度で紹介します。素材やこだわりなどをアピールしていきます。</p>
+      
+          </li>
 
-        <li><img class="menu_images" src="./images/pc_menu_food-100.jpg" alt="食べ物の画像">
+        <li>
+          <div class="menu_wrap">
+          <img class="menu_images" src="./images/pc_menu_food-100.jpg" alt="食べ物の画像">
           <h4>Food</h4>
+          </div>
           <p class="menu_text">フードメニューの概要を100文字程度で紹介します。素材やこだわりなどをアピールしていきます。</p>
         </li>
 
-        <li><img class="menu_images" src="./images/pc_menu_sweets-100.jpg" alt="デザートの画像">
+        <li>
+          <div class="menu_wrap">
+          <img class="menu_images" src="./images/pc_menu_sweets-100.jpg" alt="デザートの画像">
           <h4>Sweets</h4>
+          </div>
           <p class="menu_text">スイーツメニューの概要を100文字程度で紹介します。素材やこだわりなどをアピールしていきます。</p>
         </li>
       </ul>
@@ -107,6 +117,7 @@
           <div>
             <img class="event_image01" src="./images/event@2x.png" alt="EVENT">
           </div>
+          <div class="event_wrap">
           <dl>
              
                 <div class="event_list">
@@ -121,10 +132,11 @@
                    <dt>2020.02.06</dt>
                    <dd>7コーヒーの日で30％OFFイベントを開催［3日間限定］</dd>
                   
-                 </div>
-                 <!-- 質問：dlタグの中にdivは非推奨ともネットに書いていました。この使い方は、一般的には使いませんか？ -->
+                </div>
             
           </dl>
+          </div>
+          
 
         </section>
         
@@ -136,12 +148,27 @@
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3253.8735363140036!2d140.17689554089856!3d35.35878467280665!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6022a5d3dad7573b%3A0x8ffe5ceddb64334e!2z44K244O744OQ44Oz44OW44O844OV44Kp44Os44K544OI!5e0!3m2!1sja!2sjp!4v1749313998259!5m2!1sja!2sjp" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
          </section>
     </main>
-    <footer></footer>
+
+    <footer class="footer_wrap">
+      <div class="footer_content">
+      <div class="footer_logo">
+        <img src="./images/design_cafe_logo_footer@2x.png" alt="DESIGN CAFE">
+      </div>
+      <address class="footer_address">
+        OPEN 18:00 / CLOSE 24:00<br>
+        〒150-0022<br>
+        東京都渋谷区東京南123デザインビルB1<br>
+        MAIL：info@designcafe.tokyo<br>
+      </address>
+      </div>
+      <p class="copy">&copy; 2021 DESIGN CAFE</p>
+    </footer>
+
     <div class="pagetop">
       <a href="#header">
         <img src="./images/to_top@2x.png" alt="ページトップボタン">
       </a>
     </div>
-
+   
   </body>
 </html>
