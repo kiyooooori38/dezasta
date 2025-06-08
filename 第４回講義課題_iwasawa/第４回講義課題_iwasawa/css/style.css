@@ -55,6 +55,8 @@ header {
 
 .sub_title {
   margin-top: 104px;
+  font-size: 30px;
+  letter-spacing: 0;
 }
 
 .title {
@@ -82,6 +84,7 @@ header {
   display: flex;
   align-items: center;
   text-align: left;
+  justify-content: space-between;
 }
 
 .about_flex div {
@@ -96,9 +99,9 @@ header {
 .about_image02 {
   width: 272px;
 }
-.about_content {
-  width: 50%;
-  padding-left: 79px;
+.about_flex div.about_content {
+  width: 41%;
+  /* padding-left: 79px; */
   box-sizing: border-box;
 }
 h3 {
@@ -128,27 +131,29 @@ h3 {
 }
 
 .menu_content li {
-  position: relative;
+  /* position: relative; */
   width: calc(100% / 3);
+}
+.menu_wrap {
+  position: relative;
 }
 .menu_images {
   width: 100%;
   border-radius: 0 42px 0 0;
 }
 
-h4 {
+.menu_wrap h4 {
   font-size: 38px;
   color: #d30202;
   position: absolute;
-  top: 188px;
-  left: 11px;
+  /* top: 188px; */
+  top: 94%;
+  left: 3.6%;
+  font-size: 38px;
 }
 
 .menu_text {
-  margin-top: 39px;
-  /*質問：aiデータの余白は9pxですが、h4にpositionを設定したらここの幅まで狭まってしまいました。
-  どうきっちり調整したらいいかわからず、目分量で余白を設定してしまっていますが、
-  正しく9px余白を設けるにはどうしたらいいでしょうか・・・*/
+  margin-top: 45px;
   font-size: 17px;
   line-height: 1.47;
 }
@@ -168,23 +173,38 @@ h4 {
   width: 173px;
 }
 
-dl {
+.event_wrap {
   background-color: white;
   border: 3.7px solid #4f260b;
   margin-top: 30px;
-  height: 200px;
+  /* height: 200px; */
+  padding: 40px 0;
+}
+
+dl {
+  display: inline-block;
 }
 
 .event_list {
   display: flex;
   justify-content: flex-start;
   gap: 55px;
-  width: fit-content;
-  margin-left: auto;
-  margin-right: auto;
-  /* 中央寄せにしようとwidthやmarginをこのように設定すると、端が揃わず、この設定を外すと真ん中に寄せられず苦戦しています */
+  /* width: fit-content; */
+  /* margin-left: auto;
+  margin-right: auto; */
 }
 
+.event_list dt,
+dd {
+  font-size: 23px;
+  line-height: 1.96;
+  letter-spacing: 0;
+}
+
+.event_list dd {
+  text-decoration-line: underline;
+  text-decoration-thickness: 1px;
+}
 /*アクセス*/
 iframe {
   margin-top: 37px;
@@ -198,6 +218,33 @@ iframe {
 }
 
 /* フッター */
+.footer_wrap {
+  background-color: #fff;
+  padding: 75px 0;
+}
+
+.footer_content {
+  display: flex;
+  gap: 65px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.footer_logo img {
+  width: 227px;
+}
+
+.footer_address {
+  font-size: 20px;
+  line-height: 1.95;
+  letter-spacing: 0;
+}
+
+.copy {
+  text-align: center;
+  font-size: 16px;
+  letter-spacing: 0;
+  margin-top: 74px;
+}
 /* ページトップボタン */
 .pagetop {
   position: fixed;
