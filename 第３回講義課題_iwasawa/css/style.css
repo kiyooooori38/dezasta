@@ -64,7 +64,7 @@ h1 {
     font-size: 20px;
   }
   .contain {
-    display: flex;
+    /* display: flex; */
     flex-direction: column;
     margin: 0 10px;
   }
