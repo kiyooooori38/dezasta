@@ -240,6 +240,9 @@ iframe {
   font-size: 20px;
   line-height: 1.95;
   letter-spacing: 0;
+  font-family: "游明朝", YuMincho, "Hiragino Mincho ProN W3",
+    "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝",
+    "ＭＳ 明朝", serif;
 }
 
 .copy {
