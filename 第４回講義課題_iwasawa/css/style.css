@@ -103,6 +103,7 @@ header {
   width: 41%;
   /* padding-left: 79px; */
   box-sizing: border-box;
+  padding-right: 10px;
 }
 h3 {
   margin-top: 47px;
@@ -119,6 +120,7 @@ h3 {
 /*MENU*/
 .main_wrap {
   margin-top: 96px;
+  padding: 0 10px;
 }
 .menu_image01 {
   width: 151px;
@@ -228,6 +230,7 @@ iframe {
   gap: 65px;
   max-width: 1000px;
   margin: 0 auto;
+  padding-left: 10px;
 }
 .footer_logo img {
   width: 227px;
@@ -237,6 +240,9 @@ iframe {
   font-size: 20px;
   line-height: 1.95;
   letter-spacing: 0;
+  font-family: "游明朝", YuMincho, "Hiragino Mincho ProN W3",
+    "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝",
+    "ＭＳ 明朝", serif;
 }
 
 .copy {
