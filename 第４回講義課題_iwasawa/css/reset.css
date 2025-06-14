@@ -28,7 +28,10 @@ li {
     "ＭＳ 明朝", serif; /*質問：サイトからコピーしましたが黄色い枠が表示されています。半角に直すひつようがありますか？*/
   font-weight: normal;
   font-feature-settings: "palt";
-  letter-spacing: 0.1em;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 a {

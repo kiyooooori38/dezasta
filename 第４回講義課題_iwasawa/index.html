@@ -23,6 +23,7 @@
             alt="DESIGN CAFE"
           />
         </h1>
+        <!-- pcナビ -->
         <nav class="pc_nav">
           <ul>
             <li><a href="#about">ABOUT US</li></a>
@@ -32,6 +33,23 @@
             <li><a href="#access">ACCESS</li></a>
           </ul>
         </nav>
+
+        <!--spcナビ -->
+        <div class="hamburger" aria-label="メニューを開く">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <!-- <nav class="sp_nav">
+          <ul>
+            <li><a href="#about">ABOUT US</li></a>
+            <li><a href="#menu">MENU</li></a>
+            <li><a href="#gallery">GALLERY</li></a>
+            <li><a href="#event">EVENT</li></a>
+            <li><a href="#access">ACCESS</li></a>
+          </ul>
+        </nav> -->
       </div>
     </header>
 
@@ -43,10 +61,10 @@
       <p class="title">
         ハッピーに溢れる1日を<br />
         1杯のコーヒーから。
-      </h1>
+      </p>
       <p class="title_text">
-        毎日を丁寧に大切に過ごしたい。だからこそ一杯一杯丁寧にコーヒーを入れ<br />
-        足を運んでくれるお客さんには落ち着く空間とこだわりのコーヒーを提供したい。
+        <span class="a">毎日を丁寧に大切に過ごしたい。</span>だからこそ一杯一杯丁寧にコーヒーを入れ<br />
+        <span class="b">足を運んでくれるお客さんには落ち着く空間と</span>こだわりのコーヒーを提供したい。
       </p>
     </div>
       <!-- ABOUT US -->
@@ -55,27 +73,26 @@
       <img class="about_image01" src="./images/pc_about-100.jpg" alt="コーヒーの写真">
       </div>
       <div class="about_content">
-        <img class="about_image02" src="./images/about_us@2x.png" alt="ABOUT US">
-        <h3>私たちが提供する<br>
-            こだわりのコーヒー</h3>
+        <h2><img class="about_image02" src="./images/about_us@2x.png" alt="ABOUT US"></h2>
+        <p class="catchphrase">私たちが提供する<br>
+            こだわりのコーヒー</p>
         <p class="about_text">
           サービスを提供する上での想いや心がけていることなど、メッセージを文章で紹介します。サービスを提供する上での想いや心がけていることなど、メッセージを文章で紹介します。サービスを提供する上での想いや心がけていることなど、メッセージを文章で紹介します。サービスを提供する上での想いや心がけていることなど、メッセージを文章で紹介します。サービスを提供する上での想いや心がけていることなど、メッセージを文章で紹介します。
         </p>
       </div>
     </section>
 
-    <!-- MENU テストテスト-->
+    <!-- MENU -->
       <section id="menu" class="main_wrap">
       <div>
-      <img class="menu_image01" src="./images/menu@2x.png" alt="MENU">
+      <h2><img class="menu_image01" src="./images/menu@2x.png" alt="MENU"></h2>
       </div>
       <ul class="menu_content">
         <li>
           <div class="menu_wrap">
               <img class="menu_images" src="./images/pc_menu_drink-100.jpg" alt="飲み物の画像">
-              <h4>Drinks</h4>
+              <h3>Drinks</h3>
           </div>
-              <!-- 質問：h4タグは正しいでしょうか？他の箇所も、ベストなダグでなければコメントいただけると嬉しいです！ -->
               <p class="menu_text">ドリンクメニューの概要を100文字程度で紹介します。素材やこだわりなどをアピールしていきます。</p>
       
           </li>
@@ -83,7 +100,7 @@
         <li>
           <div class="menu_wrap">
           <img class="menu_images" src="./images/pc_menu_food-100.jpg" alt="食べ物の画像">
-          <h4>Food</h4>
+          <h3>Food</h3>
           </div>
           <p class="menu_text">フードメニューの概要を100文字程度で紹介します。素材やこだわりなどをアピールしていきます。</p>
         </li>
@@ -91,7 +108,7 @@
         <li>
           <div class="menu_wrap">
           <img class="menu_images" src="./images/pc_menu_sweets-100.jpg" alt="デザートの画像">
-          <h4>Sweets</h4>
+          <h3>Sweets</h3>
           </div>
           <p class="menu_text">スイーツメニューの概要を100文字程度で紹介します。素材やこだわりなどをアピールしていきます。</p>
         </li>
@@ -101,7 +118,7 @@
      <!-- GALLERY -->
       <section id="gallery" class="gallery_slider">
         <div class="main_wrap">
-      <img class="gallery_image01" src="./images/gallery@2x.png" alt="GALLERY">
+      <h2><img class="gallery_image01" src="./images/gallery@2x.png" alt="GALLERY"></h2>
       </div>
       <ul class="gallery_wrap">
         <li><img src="./images/pc_gallary_05-100.jpg" alt="店内の様子2"></li>
@@ -115,7 +132,7 @@
        <!-- EVENT -->
         <section id="event" class="main_wrap">
           <div>
-            <img class="event_image01" src="./images/event@2x.png" alt="EVENT">
+           <h2><img class="event_image01" src="./images/event@2x.png" alt="EVENT"></h2>
           </div>
           <div class="event_wrap">
           <dl>
@@ -143,7 +160,7 @@
         <!-- ACCESS -->
          <section id="access" class="access_map">
            <div class="main_wrap">
-            <img class="access_image01" src="./images/access@2x.png" alt="ACCESS">
+            <h2><img class="access_image01" src="./images/access@2x.png" alt="ACCESS"></h2>
           </div>
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3253.8735363140036!2d140.17689554089856!3d35.35878467280665!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6022a5d3dad7573b%3A0x8ffe5ceddb64334e!2z44K244O744OQ44Oz44OW44O844OV44Kp44Os44K544OI!5e0!3m2!1sja!2sjp!4v1749313998259!5m2!1sja!2sjp" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
          </section>
@@ -171,5 +188,25 @@
       </a>
     </div>
    
+    
   </body>
 </html>
+
+<!-- 
+①hタグを見直してみました！修正したもの、おかしくないでしょうか？
+
+②ヘッダー部分、メディアクエリで設定した幅になるまでの間、どんどんナビゲーションとロゴが近づいていってしまうのが気になっています。
+文字やロゴ、ナビゲーションのギャップがすこし小さくなればいいのかと思い、clampを使用してみました。
+文字やロゴは小さくすることができるようになったのですが、gapをうまく縮めることができませんでした。
+タブレットサイズになるまでの間、不自然にならないためにはどのように対応するのがよいのでしょうか？
+また、vwを計算するときに使用する画面幅はいくつに設定するものなのでしょうか？今回は、title以外は1200pxで計算しているつもりです。
+また、いろんな箇所（title_textなど）も気になってclampを使ってみたのですが、多様しすぎなのでしょうか・・・
+
+③レスポンシブ対応のときのファーストビューが、object-fit:coverで中央でトリミングされている気がするのですが、
+見本は画像の別の部分が表示されているかと思います。どのように調整したらいいのでしょうか・・・
+
+④title_text SP版ですが、改行をするのにspanタグとwhite-spaceプロパティを使ってみました。
+WEBでの検索結果を、見様見真似でやってみたのですがこの対応はあってますでしょうか？
+::afterの使い方も、文章を読んでもあまりピンとこず、しっかり理解できていないので教えていただけると嬉しいです”
+
+-->
