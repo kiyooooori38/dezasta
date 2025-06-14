@@ -17,18 +17,21 @@
 
         <nav class="menu">
           <ul>
-            <li>ホーム</li>
-            <li>ページ</li>
-            <li>タイポグラフィー</li>
-            <li>お問い合わせ</li>
+            <li>
+              <a href="">ホーム<span></span></a>
+            </li>
+            <li>
+              <a href="">ページ<span></span></a>
+            </li>
+            <li><a href="">タイポグラフィー</a></li>
+            <li><a href="">お問い合わせ</a></li>
           </ul>
           <div class="research"></div>
         </nav>
       </div>
 
       <div class="main_visual">
-        <div></div>
-        <!--本当だったらimgタグで画像を差し込むが、画像なしのため図形をcssで書く -->
+        <img src="https://placehold.jp/1035x500.png" alt="ダミー画像" />
       </div>
 
       <p class="main_sentence">
@@ -46,9 +49,13 @@
         <!-- フッター左側 -->
         <div class="footer_left">
           <div class="left_flex">
-            <div class="profile_img"></div>
+            <img
+              src="https://placehold.jp/100x100.png"
+              class="profile_img"
+              alt=""
+            />
             <div class="profile_content">
-              <p>Johon Doe</p>
+              <strong>Johon Doe</strong>
               <!-- SNSアイコン　イメージの代わり図形を設置 -->
               <ul>
                 <li class="sns_icon"></li>
@@ -75,18 +82,18 @@
             <div class="right_content">
               <h2>最近の投稿</h2>
               <a href="">書くためのテーマ</a>
-              <p>2018年9月1日</p>
+              <p class="date">2018年9月1日</p>
               <a href="">画像付きの投稿</a>
-              <p>2018年9月1日</p>
+              <p class="date">2018年9月1日</p>
               <a href="">引用付きの投稿</a>
-              <p>2018年9月1日</p>
+              <p class="date">2018年9月1日</p>
             </div>
             <div class="right_content">
               <h2>カテゴリー</h2>
               <ul>
-                <li>サンプル投稿</li>
-                <li>投稿フォーマット</li>
-                <li>普通の投稿</li>
+                <li><a href="">サンプル投稿</a></li>
+                <li><a href="">投稿フォーマット</a></li>
+                <li><a href="">普通の投稿</a></li>
               </ul>
             </div>
           </div>
@@ -95,3 +102,21 @@
     </footer>
   </body>
 </html>
+
+<!-- 質問
+ ①前回、ヘッダーのナビゲーション部分の下の余白が見本と異なっていたため、調整してみてくださいと先生にみていただいたので、
+ 調整してみました。見本はaタグに余白がありその真ん中に文字がきているようにみえるのですが、display:blockにしてもなんだかうまくいかず
+ 結局、そのままmargin-bottomで余白を調整しました。このやり方でよいのでしょうか・・・ 
+ 
+ ②ヘッダー左側部分とナビゲーションの余白が見本と揃えられません・・・
+ 見本との違いは、「write」と「書くためのテーマ」の幅が違うことが原因かと思うのですが、どのように修正したらいいかわからなくなってしまいました・・・。
+ 
+ ③フッタープロフィール部分、footer_leftを30%に指定すると、profile_discriptionが
+幅いっぱいに広がってしまってprofile_contentの幅からはみ出てしまいます。
+それぞれにマージンを同じだけ指定してあげると、右端が揃うのですが、そうするとフッター右側の
+要素との間の余白が開きすぎてしまいます...
+どうしたらいいでしょうか・・・
+
+一人での勉強だとくじけそうな内容ですが、いつも丁寧に修正してくれるので頑張れます；；！
+いつもありがとうございます！
+ -->

@@ -3,6 +3,7 @@
 body {
   max-width: 1035px;
   margin: 0 auto;
+  padding: 0 40px;
 }
 
 header {
@@ -17,7 +18,9 @@ header {
 .site_title {
   font-size: 2.5rem;
 }
-
+.title {
+  padding: 0 75px 10px 0;
+}
 .title p {
   font-size: 1rem;
   padding-top: 10px;
@@ -27,30 +30,54 @@ header {
   display: flex;
   justify-content: space-around;
   align-items: flex-end;
+  margin-bottom: 20px;
 }
 
 .menu ul {
   display: flex;
   justify-content: space-between;
-  gap: 40px;
   margin-right: 150px;
 }
+
+.menu li {
+  padding: 0 16px;
+}
+
+.menu li:first-child {
+  padding-left: 0;
+}
+
+.menu li:last-child {
+  padding-right: 0;
+}
+
+.menu span {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin: 0 0 3.5px 10px;
+  border-bottom: 1px solid #000;
+  border-right: 1px solid #000;
+  transform: rotate(45deg);
+}
+
 .research {
   background-color: darkgray;
   width: 34px;
 
   height: 40px;
 }
-.main_visual div {
-  background-color: darkgray;
-  max-width: 1035px;
-  height: 500px;
+.main_visual img {
+  width: 100%;
   margin-top: 60px;
 }
 
 .main_sentence {
   font-size: 1.5rem;
   margin-top: 60px;
+  font-family: Georgia, "游明朝", YuMincho, "Hiragino Mincho ProN", Meiryo,
+    serif;
+  line-height: 1.8;
 }
 /* メイン あとで*/
 main {
@@ -65,19 +92,25 @@ main {
   margin-top: 60px;
   border-top: 1px solid rgb(217, 216, 216);
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 /* フッター左側 */
+.footer_left {
+  width: 20%;
+}
 .left_flex {
   display: flex;
+  align-items: center;
+  /* justify-content: space-between; */
   margin-top: 60px;
 }
 .profile_img {
-  background-color: darkgray;
-  width: 100px;
-  height: 100px;
   border-radius: 50%;
+  margin-right: 18px;
+}
+.profile_content strong {
+  font-size: 19px;
 }
 .profile_content ul {
   display: flex;
@@ -88,22 +121,62 @@ main {
   background-color: darkgray;
   width: 24px;
   height: 24px;
+  margin-right: 4px;
 }
 .profile_discription {
-  display: inline-block;
+  font-size: 17px;
+  line-height: 1.7;
+  margin-top: 20px;
 }
 
 /* フッター左側 */
+h2 {
+  font-size: 14px;
+  font-weight: bolder;
+  margin-bottom: 30px;
+}
 .footer_right {
   margin-top: 60px;
+  width: 70%;
 }
 .right_flex {
   display: flex;
   justify-content: space-around;
 }
 
-/* つまずいているポイント
-・フッター部分、プロフィール写真の下のテキスト「これはプロフィール〜」が上の横並びの要素幅に直せません・・・
-・「フッター右」〜「カテゴリー」それぞれの幅に差が出てしまっています。。。
+.right_content {
+  width: 33%;
+  padding: 0 20px;
+  color: rgb(105, 104, 104);
+}
 
-*/
+.right_content:first-child {
+  padding-left: 0;
+}
+
+.right_content:last-child {
+  padding-right: 0;
+}
+
+.right_content p {
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.right_content a {
+  font-size: 17px;
+  line-height: 1.7;
+  text-decoration: underline;
+  text-decoration-color: gainsboro;
+  text-decoration-thickness: 1px;
+}
+
+.date {
+  color: darkgray;
+  padding-bottom: 14px;
+}
+
+.right_content li {
+  color: rgb(105, 104, 104);
+  padding-bottom: 14px;
+}

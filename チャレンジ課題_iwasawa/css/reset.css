@@ -13,18 +13,19 @@ dl,
 dt,
 dd,
 ul,
-li {
+li,
+p {
   margin: 0;
   padding: 0;
   line-height: 1;
   /*デフォルトの文字色、font-familyを予め当てておく*/
   color: #000;
-  font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "メイリオ",
-    "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
+  font-family: Georgia, "游明朝", YuMincho, "Hiragino Mincho ProN", Meiryo,
+    serif;
 }
 
 p {
-  color: darkgray;
+  color: rgb(105, 104, 104);
 }
 
 a {
