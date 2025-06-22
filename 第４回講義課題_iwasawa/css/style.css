@@ -28,15 +28,16 @@ header {
 }
 
 .header_logo {
-  /* width: 227px; */
-  width: clamp(187px, 1.9vw, 227px);
+  width: 227px;
+  /* width: clamp(187px, 1.9vw, 227px); */
   height: auto;
 }
 
 .pc_nav ul {
   display: flex;
-  gap: 54px;
-  /* gap: clamp(30px, 3.8vw, 54px); */
+  justify-content: space-between;
+  /* gap: 54px; */
+  /* gap: clamp(30px, 3.8vw, 54px); memo:gapにはclampは使用不可。画面幅に合わせて間隔を自動調整するた、スペースアラウンド*/
 }
 
 .pc_nav li {
@@ -45,13 +46,15 @@ header {
   color: #fff;
   font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "メイリオ",
     "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
-  font-size: clamp(12px, 1.5vw, 18px);
-  /* font-size:18px */
+  /* font-size: clamp(12px, 1.5vw, 18px); */
+  font-size: 18px;
   font-weight: bold;
   letter-spacing: 0;
 }
 
-.hamburger {
+/* SP版メニュー */
+.sp_nav,
+.sp_btn {
   display: none;
 }
 
@@ -71,7 +74,7 @@ header {
   /* font-size: 82px; */
   font-size: clamp(
     38px,
-    8.2vw,
+    3.45vw,
     82px
   ); /*メモ：画面幅に合わせて縮小されるようにしてみる*/
   /* font-weight: normal; */
@@ -266,15 +269,14 @@ iframe {
   width: 125px;
 }
 
-/* レスポンシブ対応 */
-@media screen and (max-width: 767px) {
+/* レスポンシブ対応 メニューとロゴがぶつかる直前 端末のサイズ・デザインが崩れるタイミング、二つのブレイクポイント設定方法がある*/
+@media screen and (max-width: 1100px) {
   /* ヘッダー */
-  .header_slider img {
+  /* .header_slider img {
     min-height: 100vh;
     object-fit: cover; /*見える画像の位置が違う・・・*/
-  }
-
-  .header_logo {
+  /* } */
+  */ .header_logo {
     width: 187px;
   }
   .pc_nav {
@@ -282,23 +284,95 @@ iframe {
   }
 
   /* ハンバーガーメニュー */
-  .header_wrap {
-    padding: 20px 24px 0 13px;
+  .sp_btn {
+    display: block; /*表示させてあげますよ*/
+    height: 23px;
+    cursor: pointer;
+    /* 位置の調整 */
+    position: absolute;
+    top: 23px;
+    right: 25px;
+    z-index: 100; /*positionが設定されていないと効果なし*/
   }
-  .hamburger {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
+
+  .sp_btn span {
+    display: block; /*spanタグはinline要素なため、幅高さを設定できないためblock要素にしてあげる*/
     width: 33px;
-  }
-  .hamburger span {
-    display: block;
-    width: 100%;
     height: 3px;
     background: #fff;
     border-radius: 2px;
+    /* 位置の調整 */
+    position: relative;
+    top: 10px; /*今ある場所から指定分動かせる*/
+    transition: 0.3s;
   }
 
+  .sp_btn span::before,
+  .sp_btn span::after {
+    content: "";
+    display: block;
+    width: 33px;
+    height: 3px;
+    background: #fff;
+    border-radius: 2px;
+    position: absolute;
+    transition: 0.3s;
+  }
+
+  .sp_btn span::before {
+    bottom: 10px; /*基準としているところ下方向から１０px上に*/
+  }
+
+  .sp_btn span::after {
+    top: 10px;
+  }
+
+  .sp_btn.open span {
+    /*クラスをスペースなしで記述すると、sp_btnもopenも効かせられる？？？？要復讐*/
+    background-color: transparent; /*display noneにしちゃうと存在しないことになっちゃうそれだと・・・なんだっけ要復讐*/
+  }
+  /*バツ印*/
+  .sp_btn.open span::before {
+    bottom: 0;
+    transform: rotate(45deg);
+  }
+
+  .sp_btn.open span::after {
+    top: 0;
+    transform: rotate(-45deg);
+  }
+
+  /*メニューの見た目 ボタンをクリックした時に黒い画面を重ねる*/
+  .sp_nav {
+    position: absolute; /*層を一枚足す*/
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8); /*最後のaは、透過度*/
+    z-index: 1;
+  }
+
+  .sp_nav ul li {
+    color: #fff;
+    font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "メイリオ",
+      "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  /* メニューを画面中央寄せ！flexが一番 要復讐 */
+  .sp_nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    gap: 40px;
+  }
+}
+
+@media screen and (max-width: 767px) {
   /* メイン */
   .sub_title {
     margin-top: 40px;
@@ -329,4 +403,70 @@ iframe {
     content: "\A";
     white-space: pre;
   }
+
+  /* ABOUT_US */
+  .about_flex {
+    flex-direction: column;
+    /* display: contents; */
+  }
+
+  .about_image01 {
+    border-radius: 0;
+  }
+
+  .about_content {
+    display: contents;
+  }
+
+  .about_image02 {
+    width: 160px;
+  }
+
+  .catchphrase {
+    width: 100%;
+    display: block;
+    text-align: left;
+    margin-top: 32px;
+    font-size: 45px;
+  }
+
+  .about_TEXT {
+    margin-top: 19px;
+  }
+
+  /* MENU */
+  .menu_content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .menu_image01 {
+    width: 87px;
+  }
+
+  .menu_content li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .menu_images {
+    width: 300px;
+  }
+
+  .menu_wrap h3 {
+    font-size: 40px;
+  }
 }
+
+/*質問
+①about us部分の順番を入れかれることができませんでした・・・。about_flexにdisplay:contentsを指定してみたのですが、
+そうするとorderを上手く機能させることできず止まってしまいました・・・。
+
+②MENUの箇所も、Drinkなどの見出しやテキストに手を加える必要があることはわかっているのですが、どう修正したらいいか分からなくなってしまいました・・・
+ここまでで、一旦添削よろしくお願いいたします。
+
+ */
+
+/* sp版画像の切り替えから・・・
+①メニューを開いた時、画面スクロー流できないように
+②メニューをクリックしたら黒い画面は閉じるように！ */
