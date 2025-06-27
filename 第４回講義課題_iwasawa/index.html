@@ -4,13 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DESIGN CAFE</title>
+<!-- slick -->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
+<!-- remodal -->
+ <link rel="stylesheet" href="remodal.css">
+<link rel="stylesheet" href="remodal-default-theme.css">
+<link rel="stylesheet" href="style.css">
+<!-- 自分が記述 -->
     <link rel="stylesheet" href="./css/reset.css" />
     <link rel="stylesheet" href="./css/style.css" />
+    <!-- /*jqueryがないとそもそも動かないから下slick/remodal*/ -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="remodal.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    <!-- /*jqueryがないとそもそも動かない*/ -->
   </head>
   <body>
     <!-- ヘッダー -->
@@ -149,12 +157,38 @@
       <h2><img class="gallery_image01" src="./images/gallery@2x.png" alt="GALLERY"></h2>
       </div>
       <ul class="gallery_wrap">
-        <li><img src="./images/pc_gallary_05-100.jpg" alt="店内の様子2"></li>
-        <li><img src="./images/pc_gallary_04-100.jpg" alt="コーヒー豆の画像"></li>
-        <li><img src="./images/pc_gallary_03-100.jpg" alt="店内の様子3"></li>
-        <li><img src="./images/pc_gallary_02-100.jpg" alt="店内の様子4"></li>
-        <li><img src="./images/pc_gallary_01-100.jpg" alt="コーヒーの画像"></li>
-        <li><img src="./images/pc_gallary_01-100.jpg" alt="コーヒーの画像"></li>
+        <li><a href="#modal_a"><img src="./images/pc_gallary_05-100.jpg" alt="店内の様子2"></a>
+        <div class="remodal" data-remodal-id="modal_a">
+  <button data-remodal-action="close" class="remodal-close"></button>
+  <img src="./images/pc_gallary_05-100.jpg" alt="店内の様子2">
+</div> </li>
+        
+        <li><a href="#modal_b"><img src="./images/pc_gallary_04-100.jpg" alt="コーヒー豆の画像"></a>
+       <div class="remodal" data-remodal-id="modal_b">
+  <button data-remodal-action="close" class="remodal-close"></button>
+<img src="./images/pc_gallary_04-100.jpg" alt="コーヒー豆の画像"></div>
+        </li>
+      
+        <li><a href="#modal_c"><img src="./images/pc_gallary_03-100.jpg" alt="店内の様子3"></a>
+        <div class="remodal" data-remodal-id="modal_c">
+  <button data-remodal-action="close" class="remodal-close"></button>
+<img src="./images/pc_gallary_03-100.jpg" alt="店内の様子3"></div>
+        </li>
+        <li><a href="#modal_d"><img src="./images/pc_gallary_02-100.jpg" alt="店内の様子4"></a>
+           <div class="remodal" data-remodal-id="modal_d">
+  <button data-remodal-action="close" class="remodal-close"></button>
+<img src="./images/pc_gallary_02-100.jpg" alt="店内の様子4"></div>
+        </li>
+        <li><a href="#modal_e"><img src="./images/pc_gallary_01-100.jpg" alt="コーヒーの画像"></a>
+           <div class="remodal" data-remodal-id="modal_e">
+  <button data-remodal-action="close" class="remodal-close"></button>
+<img src="./images/pc_gallary_01-100.jpg" alt="コーヒーの画像"></div>
+        </li>
+        <li><a href="#modal_f"><img src="./images/pc_gallary_01-100.jpg" alt="コーヒーの画像"></a>
+           <div class="remodal" data-remodal-id="modal_f">
+  <button data-remodal-action="close" class="remodal-close"></button>
+<img src="./images/pc_gallary_01-100.jpg" alt="コーヒーの画像"></div>
+        </li>
       </ul>
       </section>
 
@@ -251,14 +285,14 @@
 $(".sp_btn").on("click",function() {
   $(".sp_btn").toggleClass("open");
 
-  $(".sp_nav").fadeToggle("");
+  $(".sp_nav").fadeToggle();
   $("body").toggleClass("menu_fix");
 
 })
 
 $(".sp_nav a").on("click",function() {
   $("body").removeClass("menu_fix");
-    $(".sp_nav").fadeToggle("");
+    $(".sp_nav").fadeToggle();
     $(".sp_btn").removeClass("open");
 
 })
@@ -279,7 +313,7 @@ $(".gallery_wrap").slick(
   slidesToScroll: 1,
   responsive: [
     {
-      breakpoint: 787,
+      breakpoint: 767,
       settings: {
         slidesToShow: 1,
         slidesToScroll: 1,
@@ -299,40 +333,24 @@ $(".gallery_wrap").slick(
 </html>
 
 <!-- 進めたところ
- ・前回添削の修正と、メニュー部分開いたときにスクロールしないように・リンク飛んだ後はメニューを閉じるように動きをつけたしました。
- ・ギャラリーのスライドの箇所に着手しました。が、質問２のところで躓いています・・・ 
+ ・前回添削の修正とモーダルウィンドウのところまで取り組んでみました！
+ 表示ができたときには、大袈裟ではありますが本当に感動しました；；！！
+
  -->
 
 <!-- 質問 
- ①第５回の授業を振り返りなのですが、ハンバーガーメニューを開いた時に一枚黒い画面を足すとき、position:abusoluteを
- 記述してあげたと思います。ここがうまく理解しきれなかったのですが、どうしてこの記述をしてあげるのでしょうか・・・？
- スタイルシートの365行目の箇所になります。
+ ①前回の添削時、SP版のイベント箇所の一番したの記事の余白が大きくなってしまっているとのことだったので修正しましたが、
+ [一番下の要素のみpadding-bottomを効かせない]というような対応をとりたかったのですがうまくできず、結局純粋にかぶっている分の
+ paddingを減らしています。aタグだとlast-childが効かないということでしょうか？
 
- ②ギャラリーの箇所、なぜかslickメソッドを記述するとそれまで表示されていた画像が消えてしまい困っています。。。
+
+ ②remodelを読み込む際、slickの読み込み後に記述したら、スライダー箇所の矢印などが消えてしまい、順番を変更しました。
+ プラグインの読み込み順などで気を付けるべきことがあるのでしょうか？（そもそも私の勘違いによる事象でしたらすみません・・・）
 
  -->
 
  <!-- ポートフォリオについて
- こんな動きをつけてみたい！と思っているものがあったのですが、紹介いただいた動き集になかったように思います。
- 期間内に実現は難しいでしょうか？
-①ピタゴラスイッチのような、球体が転がって板から板へ落ちていったり歯車を回したりするような動き
-以下の参考サイトまで複雑なものでなくてよいのですが、イメージとしてはこちらになります。
-
-・https://brm.io/matter-js/
-
-②以下参考サイト「Creative works」箇所、作品にカーソルをあてたときに中身がうねうね幻想的に動く仕組み
-・https://uniel.jp/creativeworks/
-
-空いている時間は全てポートフォリオ作成に当てたいと思っているので、挑戦的な内容でもできるだけトライしたいなと思っています！
- -->
-
-
- <!-- 講義が終わってみての感想 
- まずは、６回の授業本当にありがとうございました！
- １回目の授業のときに、実はHTMLとCSSについて、一通り説明しきってしまうカリキュラムに度肝を抜かれていました！笑
- ですが、一度の講義で多くのことを知れ、jQueryのことまで学び、こんなに多くの動きを実現できていることがとても楽しく感じています！
- 少し独学をしていたときは、すぐに心が折れていましたが、平垣内先生の丁寧な添削で、すこしずつ課題も進められ継続的に学習できていることが本当にありがたいです。
- 次回までしばらく時間があきますが、引き続きよろしくおねがいいたします＾＾！
- （先生の授業をすすめるときの「ほいっ」が大好きです＾＾）
-
+ 早速確認いただいて、ありがとうございます！
+ 自分のできることできないこと考え、まずはデザイン案を考えたいと思います＾＾
+ 代替案もご提示いただき、ありがとうございます！
  -->

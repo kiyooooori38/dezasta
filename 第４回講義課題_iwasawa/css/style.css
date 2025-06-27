@@ -196,6 +196,44 @@ header {
   display: flex;
   margin-top: 17px;
 }
+.slick-prev {
+  left: 21%;
+  z-index: 10;
+}
+
+.slick-prev::before {
+  content: "";
+  width: 15px;
+  height: 15px;
+  border-top: solid 3px white;
+  border-left: solid 3px white;
+  opacity: 100%;
+  transform: rotate(-45deg);
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.slick-next {
+  right: 22%;
+}
+
+.slick-next::before {
+  content: "";
+  width: 15px;
+  height: 15px;
+  border-top: solid 3px white;
+  border-left: solid 3px white;
+  opacity: 100%;
+  transform: rotate(135deg);
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+}
 
 /*イベント*/
 .event_image01 {
@@ -514,9 +552,30 @@ iframe {
     width: 142px;
   }
 
+  .gallery_wrap img {
+    width: 100%;
+  }
+
+  .slick-prev {
+    left: 7%;
+  }
+
+  .slick-prev::before {
+    width: 8px;
+    height: 8px;
+  }
+
+  .slick-next {
+    right: 7%;
+  }
+
+  .slick-next::before {
+    width: 8px;
+    height: 8px;
+  }
   /*イベント*/
   .event_wrap {
-    padding: 40px 30px;
+    padding: 40px 30px 15px 30px;
   }
   .event_image01 {
     width: 100px;
@@ -545,7 +604,7 @@ iframe {
     white-space: nowrap;
     overflow: hidden;
     display: block;
-    margin-bottom: 25px;
+    padding-bottom: 25px;
   }
 
   /* アクセス */
@@ -564,6 +623,7 @@ iframe {
     flex-direction: column;
     gap: 28px;
   }
+
   .footer_logo {
     width: 227px;
   }
@@ -571,6 +631,9 @@ iframe {
   .footer_address {
     font-size: 18px;
     line-height: 1.72;
+  }
+  .footer_wrap {
+    padding-top: 41px;
   }
 
   /* ページトップボタン */
