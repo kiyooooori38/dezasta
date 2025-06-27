@@ -4,20 +4,33 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DESIGN CAFE</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
     <link rel="stylesheet" href="./css/reset.css" />
     <link rel="stylesheet" href="./css/style.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <!-- /*jqueryがないとそもそも動かない*/ -->
   </head>
   <body>
     <!-- ヘッダー -->
     <header id="header">
       <div class="header_slider">
+        <!-- スライドにしたい画像を大きな要素で囲ってあげて、複数の要素を中にいれてあげる -->
         <div>
           <!--767px画面以下のとき、sourceタグに切り替えますよという指示-->
           <picture>
             <source srcset="./images/sp_main_vs@2x-100.jpg" media="(max-width:767px)">
             
           <img class="hero_image_pc" src="./images/pc_first-100.jpg" alt="店内の様子" />
+          </picture>
+        </div>
+        <div>
+          <!--767px画面以下のとき、スライド用-->
+          <picture>
+            <source srcset="./images/sp_main_vs@2x-100.jpg" media="(max-width:767px)">
+            
+          <img class="hero_image_pc" src="./images/slider_2.jpg" alt="店内の様子" />
           </picture>
         </div>
       </div>
@@ -40,7 +53,8 @@
           </ul>
         </nav>
 
-        <!--spcナビ -->
+        <!--spナビ -->
+       
         <div class="sp_btn">
           <span></span>
         </div>
@@ -53,7 +67,7 @@
             <li><a href="#access">ACCESS</li></a>
           </ul>
         </nav>
-    
+    </div>
       </div>
     </header>
 
@@ -140,6 +154,7 @@
         <li><img src="./images/pc_gallary_03-100.jpg" alt="店内の様子3"></li>
         <li><img src="./images/pc_gallary_02-100.jpg" alt="店内の様子4"></li>
         <li><img src="./images/pc_gallary_01-100.jpg" alt="コーヒーの画像"></li>
+        <li><img src="./images/pc_gallary_01-100.jpg" alt="コーヒーの画像"></li>
       </ul>
       </section>
 
@@ -204,19 +219,120 @@
 
    <script>
 
+// let scrollPos = 0;
+
+// $(function () {
+//   $(".sp_btn").on("click", function () {
+//     $(".sp_btn").toggleClass("open");
+//     $(".sp_nav").fadeToggle("");
+
+//     if ($("body").hasClass("no_scroll")) {
+//       // ハンバーガーメニューを閉じるとき
+//       $("body").removeClass("no_scroll").css({
+//         position: "",
+//         top: "",
+//         width: "",
+//       });
+//       $(window).scrollTop(scrollPos); // 元の位置に戻す
+//     } else {
+//       // ハンバーガーメニューを開くとき
+//       scrollPos = $(window).scrollTop(); // 現在のスクロール位置を保存
+//       $("body").addClass("no_scroll").css({
+//         position: "fixed",
+//         top: -scrollPos + "px",
+//         width: "100%",
+//       });
+//     }
+//   });
+// });
+
     $(function() {
 
 $(".sp_btn").on("click",function() {
   $(".sp_btn").toggleClass("open");
+
   $(".sp_nav").fadeToggle("");
+  $("body").toggleClass("menu_fix");
+
 })
-    })
+
+$(".sp_nav a").on("click",function() {
+  $("body").removeClass("menu_fix");
+    $(".sp_nav").fadeToggle("");
+    $(".sp_btn").removeClass("open");
+
+})
+
+$('.header_slider').slick({
+// スライダーのオプション
+    autoplay:true,
+    autoplaySpeed:2000,
+    dots: true,
+    arrows:false,
+
+})
+
+$(".gallery_wrap").slick(
+  {
+  speed: 300,
+  slidesToShow: 5,
+  slidesToScroll: 1,
+  responsive: [
+    {
+      breakpoint: 787,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+      }
+    }]
+  });
+
+// 動かしたいものを囲っている親要素をドルのかっこにしてあげる
+// うまくいかないときは、サイトのソースをみてみて、要素に勝手に付け足されたタグがあるか確認する
+
+    });
 
 
    </script>
 
-
-
   </body>
 </html>
 
+<!-- 進めたところ
+ ・前回添削の修正と、メニュー部分開いたときにスクロールしないように・リンク飛んだ後はメニューを閉じるように動きをつけたしました。
+ ・ギャラリーのスライドの箇所に着手しました。が、質問２のところで躓いています・・・ 
+ -->
+
+<!-- 質問 
+ ①第５回の授業を振り返りなのですが、ハンバーガーメニューを開いた時に一枚黒い画面を足すとき、position:abusoluteを
+ 記述してあげたと思います。ここがうまく理解しきれなかったのですが、どうしてこの記述をしてあげるのでしょうか・・・？
+ スタイルシートの365行目の箇所になります。
+
+ ②ギャラリーの箇所、なぜかslickメソッドを記述するとそれまで表示されていた画像が消えてしまい困っています。。。
+
+ -->
+
+ <!-- ポートフォリオについて
+ こんな動きをつけてみたい！と思っているものがあったのですが、紹介いただいた動き集になかったように思います。
+ 期間内に実現は難しいでしょうか？
+①ピタゴラスイッチのような、球体が転がって板から板へ落ちていったり歯車を回したりするような動き
+以下の参考サイトまで複雑なものでなくてよいのですが、イメージとしてはこちらになります。
+
+・https://brm.io/matter-js/
+
+②以下参考サイト「Creative works」箇所、作品にカーソルをあてたときに中身がうねうね幻想的に動く仕組み
+・https://uniel.jp/creativeworks/
+
+空いている時間は全てポートフォリオ作成に当てたいと思っているので、挑戦的な内容でもできるだけトライしたいなと思っています！
+ -->
+
+
+ <!-- 講義が終わってみての感想 
+ まずは、６回の授業本当にありがとうございました！
+ １回目の授業のときに、実はHTMLとCSSについて、一通り説明しきってしまうカリキュラムに度肝を抜かれていました！笑
+ ですが、一度の講義で多くのことを知れ、jQueryのことまで学び、こんなに多くの動きを実現できていることがとても楽しく感じています！
+ 少し独学をしていたときは、すぐに心が折れていましたが、平垣内先生の丁寧な添削で、すこしずつ課題も進められ継続的に学習できていることが本当にありがたいです。
+ 次回までしばらく時間があきますが、引き続きよろしくおねがいいたします＾＾！
+ （先生の授業をすすめるときの「ほいっ」が大好きです＾＾）
+
+ -->

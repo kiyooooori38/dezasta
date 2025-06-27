@@ -58,6 +58,10 @@ header {
   display: none;
 }
 
+.sp_nav_scroll {
+  overflow: hidden;
+}
+
 /* メイン */
 .main_wrap {
   max-width: 1000px; /*メモ：画面幅１９２０pxー（４６０px*2）*/
@@ -229,6 +233,8 @@ dd {
 .event_list dd {
   text-decoration-line: underline;
   text-decoration-thickness: 1px;
+  width: 100%;
+  text-align: left;
 }
 /*アクセス*/
 iframe {
@@ -288,7 +294,7 @@ iframe {
     min-height: 100vh;
     object-fit: cover; /*見える画像の位置が違う・・・*/
   /* } */
-  */ .header_logo {
+  .header_logo {
     width: 187px;
   }
   .pc_nav {
@@ -384,11 +390,7 @@ iframe {
   }
 
   /*画面を固定*/
-  .nav.open {
-    position: fixed;
-    top: var(--scroll-y);
-    left: 0;
-    width: 100%;
+  body.menu_fix {
     overflow: hidden;
   }
 }
@@ -461,6 +463,7 @@ iframe {
     margin-top: 32px;
     font-size: 36px;
     padding-left: 10px;
+    box-sizing: border-box;
   }
 
   .about_text {
@@ -487,14 +490,16 @@ iframe {
     width: 100%;
   }
 
-  .menu_images {
+  /* .menu_images {
     min-width: 300px;
-  }
+  } */
 
   .menu_wrap h3 {
     /* top: clamp(97%, 93%, 90%); */
-    top: 97%;
-    left: 2%;
+    /* top: 97%;
+    left: 2%; */
+    top: auto; /*pc版のときの設定をクリア*/
+    bottom: -27px; /*pxで固定する。topからだと画像大きさ変わっちゃうので、下から*/
     font-size: 40px;
   }
 
@@ -510,6 +515,9 @@ iframe {
   }
 
   /*イベント*/
+  .event_wrap {
+    padding: 40px 30px;
+  }
   .event_image01 {
     width: 100px;
   }
@@ -523,16 +531,21 @@ iframe {
     align-items: flex-start;
     gap: 0;
   }
-
+  dl {
+    display: block;
+  }
   .event_list dt,
   dd {
     font-size: 16px;
+    line-height: 1.2;
   }
 
   .event_list a {
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
+    display: block;
+    margin-bottom: 25px;
   }
 
   /* アクセス */
@@ -542,6 +555,7 @@ iframe {
   }
   iframe {
     margin-top: 5px;
+    height: 191px;
   }
 
   /*フッター*/
@@ -567,17 +581,39 @@ iframe {
   }
 }
 
+/*ヘッダーのスライダー*/
+.slick-dots {
+  bottom: 20px;
+}
+
+.slick-dots li {
+  width: 15px;
+  height: 15px;
+}
+
+.slick-dots li.slick-active button:before,
+.slick-dots li button:before {
+  color: white;
+}
+
+.slick-dotted.slick-slider {
+  margin-bottom: 0;
+}
+
+.slick-dots li button:before {
+  font-size: 10px;
+}
+
 /*質問
-①メニュー部分、h3部分の位置を調整しようと位置を再調整しました。画面幅が500px前くらいまでは、いい感じの見た目なのですが
-それよりも小さくなった時すこしずつずれてしまいます。clampやtranslateを使用してみたのですが、上手くいきませんでした。
-どのように調整するのがよいのでしょうか？
-②メニュー部分、画面幅が小さくなりすぎた時に画像が小さくなりすぎていってしまうことが気になり最小値を設定
-してみましたが、気にしすぎでしょうか？
-③イベント部分、文章に「・・・」が反映せず困っています・・・。
-④レスポンシブ対応に着手している際に、クラスが足りない・・・と後から後からクラスを追加して、クラス名がごちゃごちゃになってしまいます。
-クラス名をきれいに整えるコツや、あとからタグが不足しないためのコツはありますか？（慣れるしかない・・・ということになりますよね）
+
  */
 
-/* 未対応：sp版画像の切り替えから・・・
-①メニューを開いた時、画面スクロー流できないように
-②メニューをクリックしたら黒い画面は閉じるように！ */
+/*メモ
+・イベント部分、文章に「・・・」が反映しなかった理由
+→中身が親要素から飛び出ていた
+
+・横スクロールが発生していないか要確認
+→多分幅＋パディングなど分がとられてしまっていることが原因なので、box-sizingを指定していて余白を含めて１００％になるようにあする
+
+
+*/
