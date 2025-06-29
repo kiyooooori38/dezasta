@@ -16,13 +16,13 @@ header {
   justify-content: space-between;
 }
 .site_title {
-  font-size: 2.5rem;
+  font-size: clamp(1.875rem, 1.696rem + 0.89vw, 2.5rem);
 }
 .title {
   padding: 0 75px 10px 0;
 }
 .title p {
-  font-size: 1rem;
+  font-size: 18px;
   padding-top: 10px;
 }
 
@@ -63,8 +63,7 @@ header {
 
 .research {
   background-color: darkgray;
-  width: 34px;
-
+  width: 40px;
   height: 40px;
 }
 .main_visual img {
@@ -79,17 +78,92 @@ header {
     serif;
   line-height: 1.8;
 }
-/* メイン あとで*/
-main {
-  background-color: darkgray;
-  max-width: 1035px;
-  height: 500px;
-  margin-top: 60px;
+
+.sp_menu,
+.sp_btn {
+  display:none;
+}
+
+/* メイン */
+.content_wrap{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 115px;
+}
+
+.content_wrap:not(:first-child){
+  margin-top: 75px;
+}
+
+.date_wrap,
+.margin_wrap {
+  width: 30%;
+}
+
+.date_wrap time{
+  font-size: 17px;
+  color: #999;
+}
+.content_wrap article,
+.pagination {
+  width: 70%;
+}
+
+.content_wrap article h3 {
+  font-size: 22px;
+}
+
+.content_wrap article p {
+  font-size: 17px;
+  color: #666;
+  margin-top: 24px;
+  line-height: 1.8;
+}
+
+/* ページネーション */
+.pagination_wrap {
+  display: flex;
+  margin-top: 75px;
+  padding-bottom: 30px;
+    
+}
+
+.pagination_area {
+  width: 70%;
+}
+.pagination {
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.pagination li {
+  margin-right: 6px;
+  padding: 8px 18px;
+  border: 1px solid #eee;
+  color: #999;
+  display: flex;
+  align-items: center;
+  
+}
+
+.pagination li:last-child{
+  padding: 12px 36px;
+}
+
+.pagination li span {
+  padding-left: 2px;
+}
+
+.pagination li:hover{
+  background-color: #999;
+  color: #fff;
+  transition: .3s;
 }
 
 /* フッター */
 .footer_wrap {
-  margin-top: 60px;
+  margin: 75px 0 100px 0;
   border-top: 1px solid rgb(217, 216, 216);
   display: flex;
   justify-content: space-between;
@@ -97,7 +171,7 @@ main {
 
 /* フッター左側 */
 .footer_left {
-  width: 20%;
+  width: 28%;
 }
 .left_flex {
   display: flex;
@@ -129,7 +203,7 @@ main {
   margin-top: 20px;
 }
 
-/* フッター左側 */
+/* フッター右側 */
 h2 {
   font-size: 14px;
   font-weight: bolder;
@@ -179,4 +253,168 @@ h2 {
 .right_content li {
   color: rgb(105, 104, 104);
   padding-bottom: 14px;
+}
+
+/* サイトボトム */
+.site_bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px 0 80px 0;
+   border-top: 1px solid rgb(217, 216, 216);
+  
+}
+
+.sns_icon2_wrap {
+width: 28%;
+}
+
+.sns_icon2_wrap ul{
+  display: flex;
+  gap: 20px;
+}
+
+.site_credit{
+  width: 70%;
+}
+.site_credit p {
+color: #999;
+}
+.site_credit a {
+color: #666;
+}
+.sns_icon2 {
+  background-color: darkgray;
+  width: 26px;
+  height: 26px;
+  
+}
+
+/* レスポンシブ対応１ */
+@media screen and (max-width: 978px) {
+
+  /* ヘッダー */
+ 
+  body{
+   margin: 0 60px;
+  }
+  .header {
+   flex-direction: column;
+  }
+  .menu {
+    margin-top: 20px;
+  }
+  .menu ul{
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .menu a {
+    font-size: 14px;
+  }
+
+  /* メイン */
+  .content_wrap {
+    flex-direction: column;
+    margin-top: 95px;
+  }
+
+  .content_wrap article h3 {
+    margin-top: 8px;
+  }
+
+  .margin_wrap{
+    display: none;
+  }
+
+  /*フッター*/
+  .footer_wrap {
+  flex-direction: column;
+  }
+  
+ .footer_left {
+  width: 100%;
+ }
+
+  .right_flex {
+    flex-direction: column;
+  }
+
+  .footer_right {
+    width: 100%;
+  }
+
+  .right_content {
+    padding: 50px 0;
+    width: 100%;
+  }
+
+  .site_bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .sns_icon2_wrap {
+width: 100%;
+}
+
+.site_credit{
+  width: 100%;
+  margin-top: 20px;
+}
+
+/* レスポンシブ対応１ */
+@media screen and (max-width: 787px) {
+.menu {
+  display: none;
+}
+
+/* ハンバーガーメニュー */
+  .sp_btn {
+    display: block; /*表示させてあげますよ*/
+    height: 23px;
+    cursor: pointer;
+    /* 位置の調整 */
+    position: absolute;
+    top: 23px;
+    right: 15px;
+    z-index: 100; /*positionが設定されていないと効果なし*/
+  }
+
+  .sp_btn span {
+    display: block; /*spanタグはinline要素なため、幅高さを設定できないためblock要素にしてあげる*/
+    width: 28px;
+    height: 3px;
+    background: #000;
+    /* 位置の調整 */
+    position: relative;
+    top: 10px; /*今ある場所から指定分動かせる*/
+    transition: 0.3s;
+  }
+
+  .sp_btn span::before,
+  .sp_btn span::after {
+    content: "";
+    display: block;
+    width: 28px;
+    height: 3px;
+    background: #000;
+    position: absolute;
+    transition: 0.3s;
+  }
+
+  .sp_btn span::before {
+    bottom: 10px; /*基準としているところ下方向から１０px上に*/
+  }
+
+  .sp_btn span::after {
+    top: 10px;
+  }
+
+
+.title p {
+  font-size: 15px;
+}
+
+}
 }
