@@ -575,7 +575,7 @@ iframe {
   }
   /*イベント*/
   .event_wrap {
-    padding: 40px 30px 15px 30px;
+    padding: 40px 30px;
   }
   .event_image01 {
     width: 100px;
@@ -605,6 +605,10 @@ iframe {
     overflow: hidden;
     display: block;
     padding-bottom: 25px;
+  }
+
+  .event_list:last-child a {
+    padding-bottom: 0;
   }
 
   /* アクセス */
