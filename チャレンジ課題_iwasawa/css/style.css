@@ -318,7 +318,10 @@ color: #666;
     flex-direction: column;
     margin-top: 95px;
   }
-
+.content_wrap article,
+.pagination {
+  width: 100%;
+}
   .content_wrap article h3 {
     margin-top: 8px;
   }
