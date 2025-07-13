@@ -1,0 +1,261 @@
+@charset "utf-8";
+
+/* ヘッダー */
+header {
+   max-width: 100%;
+   height: 100vh;
+   background-image: url(../img/mainvisual-pc.jpg);
+   background-size: cover;
+   background-position: center;
+   padding: 60px 80px;
+   position: relative;
+   margin-bottom: 180px;
+   box-sizing: border-box;
+}
+
+.header_wrap {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 70px;
+}
+
+.header_wrap > h1 > img,
+.footer_info > h1 > img {
+    width: 40px;
+}
+
+.header_wrap > nav > ul {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 30px;
+}
+
+.header_wrap > nav > ul > li {
+    color: white;
+}
+
+.online_btn {
+    width: 77px;
+    height: 254px;
+    background-color: #FFFFFF33;
+    position: relative;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 30px;
+    left:40px
+}
+
+.online_btn > a {
+    display: block;
+    color: white;
+    border: 1px solid white;
+    padding: 30px 22px;
+    margin: 0 auto;
+
+}
+
+.online_btn > a:hover {
+    color: lightslategray;
+    translate: .5s;
+}
+
+/* セクション */
+main {
+    max-width: 1024px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.news_wrapper,
+.news_wrapper div,
+.news_wrapper ul,
+.products_wrapper,
+.footer_wrap,
+.footer_info,
+.footer_info nav ul {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+
+.news_wrapper,
+.products_wrapper,
+.products2_wrapper {
+    /* max-width: 1024px;
+    margin: 0 62px 180px 62px; */
+    padding: 0 20px;
+    /* box-sizing: border-box; */
+}
+
+.news_subtitle {
+    font-size: 14px;
+    margin-left: 15px;
+}
+
+.news_wrapper > article {
+    padding: 80px 100px 0 0;
+}
+
+.article_date {
+    font-size: 12px;
+    padding: 15px 30px 15px 5px;
+    display: block;
+}
+
+.article_title {
+    font-size: 16px;
+    padding: 15px 0 15px 30px;
+}
+
+.article_date {
+    border-right: 1px solid black;
+}
+
+.news_wrapper li:last-child {
+    border-left: 1px solid black;
+}
+
+/*プロダクト1*/
+
+.products_wrapper > div {
+    margin-left: 20px;
+}
+
+.products_wrapper h2,
+.products2_wrapper h2 {
+   margin-bottom: 18px;
+}
+
+
+.text_box {
+    width: 56%;
+    background-color: rgba(249, 233, 6, 0.6);
+    position: absolute;
+    left: -20px;
+    bottom: -20px;    
+}
+
+.text_box p,
+.text_box2 p {
+       color: white;
+       font-size: 16px;
+       writing-mode: horizontal-tb;
+       padding: 50px 0;
+       text-align: center;
+       line-height: 1.2;
+       
+}
+
+.product_subtitle {
+    font-size: 14px;
+    margin-left: 8px;
+    
+}
+.products_container {
+     width: 65%;
+     position: relative;
+}
+.section1_img {
+    vertical-align: bottom;
+    margin-block-start: 7em;
+   
+}
+
+.products2_wrapper {
+    display: flex;
+}
+
+.products2_wrapper > div {
+    margin-right: 20px;
+}
+
+.text_box2 {
+    width: 56%;
+    background-color: rgba(149, 42, 38, 0.6);
+    position: absolute;
+    right: -20px;
+    bottom: -20px;    
+}
+
+/* フッター */
+.footer_wrap {
+    background-color: black;
+}
+
+.footer_wrap {
+   justify-content: space-between;
+   padding: 80px 80px 30px 30px;
+}
+
+.footer_info p,
+.footer_info nav ul li,
+.footer_info2 a,
+.footer_info2 p {
+    color: white;
+}
+
+.footer_info p {
+    font-size: 14px;
+    line-height: 2;
+}
+
+.footer_info > h1 > img {
+    padding-left: 60px;
+}
+
+.footer_info nav ul {
+    display: flex;
+    padding-right: 60px;
+}
+
+.footer_info nav ul li {
+    padding-left: 25px;
+}
+
+.footer_info2 {
+    font-size: 14px;
+}
+
+.footer_info2 a {
+    padding-bottom: 5px;
+}
+.footer_info2 p {
+    border-top: 1px solid white;
+    padding-top: 5px;
+}
+
+.copy_right {
+    background-color: black;
+}
+.copy_right p {
+    writing-mode: horizontal-tb;
+    font-size: 10px;
+    color: white;
+    text-align: center;
+    padding: 30px 0;
+}
+/*質問
+①「新しい価値の創造」の部分、コピーと画像の開始位置のずらし方はこれでよいのでしょうか？
+おすすめの方法を知りたいです！
+②「create new values」の位置が、見本は「新しい価値の〜」の中央に位置していると思っています。
+marginで調整してしまったのですが、他におすすめな方法があるのでしょうか？
+③iframe部分、本当はmainタグ内に入れ込みたかったのですが、幅に100vwを設定してもどうしても画面幅
+いっぱいに広げることができずフッターに入れ込みましたが、メインタグで画面幅いっぱいにするにはどうしたら
+よかったのでしょうか？
+
+ポートフォリオについて
+以下の動きを実装することはできますでしょうか？見本にありましたら、申し訳ありません・・・
+・FVのスクロールボタン（縦線の上を丸が上下に動く
+https://www.jmc-ltd.co.jp/?_gl=1%2Atv2nvp%2A_ga%2AMTE3NjYzMjI5MC4xNzQ5ODMwOTMx%2A_ga_1YRT15EYTX%2AczE3NTAwODk5NjMkbzIkZzAkdDE3NTAwODk5NjMkajYwJGwwJGgw
+
+.文字にグラデージョンをかけることはできますか？
+https://newgraduate.jpn.pioneer/ja/
+（ABOUT USなどのように）
+
+・線の動きを真似したいです。可能でしょうか？
+https://www.internet.ac.jp/
+
+・円が広がってFVが徐々にあらわれてくる、この動きは真似できますでしょうか？
+https://supercrowds.co/?wovn=en
+*/
